@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:saplinvest/services/auth_service.dart';
 import 'package:saplinvest/view/auth/LoginScreen.dart';
 
-import '../widgets/boxDecorationSplash.dart';
-import '../widgets/myButton.dart';
+import 'widgets/boxDecorationSplash.dart';
+import 'widgets/myButton.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -122,7 +122,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const Text("Ya Da"),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        await AuthService.signInWithGoogle();
+                      },
                       icon: const Icon(
                         Icons.g_mobiledata,
                         size: 40,

@@ -7,31 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:199546589599:android:663d78496ba6749bebadaa",
-        "android_client_info": {
-          "package_name": "com.example.google_app"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD5j9Sad6ODsLY6uG1L1r9Ao6R4_2XZ8G0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:199546589599:android:ba99ad6e349d0443ebadaa",
         "android_client_info": {
           "package_name": "com.example.saplinvest"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "199546589599-njmp7usdiindh6074j80jbvdeagqjijc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.saplinvest",
+            "certificate_hash": "8199042c4e6292cff64cbd6aec84f294076cacb1"
+          }
+        },
+        {
+          "client_id": "199546589599-lss6fb40jc7n704n899l7glbb4irti02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD5j9Sad6ODsLY6uG1L1r9Ao6R4_2XZ8G0"
@@ -39,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199546589599-lss6fb40jc7n704n899l7glbb4irti02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

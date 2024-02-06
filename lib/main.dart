@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:saplinvest/firebase_options.dart';
+import 'package:saplinvest/view/HomeScreen.dart';
 import 'package:saplinvest/view/auth/LoginScreen.dart';
 import 'package:saplinvest/view/auth/RegisterScreen.dart';
 
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
               //     const Duration(seconds: 2), FlutterNativeSplash.remove);
               if (snapshot.hasData) {
                 FlutterNativeSplash.remove();
-                return const RegisterScreen();
+                return const HomeScreen();
               } else {
                 FlutterNativeSplash.remove();
 

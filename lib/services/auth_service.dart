@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:saplinvest/view/HomeScreen.dart';
 
 class AuthService extends GetxController {
@@ -16,16 +17,17 @@ class AuthService extends GetxController {
       final UserCredential userCredential = await firebaseAuth
           .createUserWithEmailAndPassword(email: email, password: password);
       if (userCredential.user != null) {
-        await _registerUser(name: name, email: email, password: password);
+        await _registerUser(
+            name: name,
+            email: email,
+            password: password,
+            userId: userCredential.user!.uid);
         Get.to(const HomeScreen());
       }
     } on FirebaseAuthException catch (e) {
       // Fluttertoast.showToast(msg: e.message!, toastLength: Toast.LENGTH_LONG);
-      Get.snackbar(
-        "There is an error",
-        e.message!,
-        backgroundColor: Colors.red
-      );
+      Get.snackbar("There is an error", e.message!,
+          backgroundColor: Colors.red);
     }
   }
 
@@ -47,9 +49,37 @@ class AuthService extends GetxController {
   static Future<void> _registerUser(
       {required String name,
       required String email,
-      required String password}) async {
+      required String password,
+      required String userId}) async {
     await userCollection
-        .doc()
+        .doc(userId)
         .set({"email": email, "name": name, "password": password});
+  }
+
+  static Future<void> signInWithGoogle() async {
+    //Oturum açma sürecini başlat
+    final GoogleSignInAccount? gUser = await GoogleSignIn().signIn();
+
+    //Süreç içerisinden bilgileri al
+    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
+
+    //Kullanıcı nesnesi oluştur
+    final OAuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: gAuth.accessToken, idToken: gAuth.idToken);
+
+    //Kullanıcı girişini sağla
+
+    try {
+      final UserCredential userCredential =
+          await firebaseAuth.signInWithCredential(credential);
+
+      if (userCredential.user != null) {
+        Get.to(const HomeScreen());
+      }
+    } on FirebaseAuthException catch (e) {
+      // Fluttertoast.showToast(msg: e.message!, toastLength: Toast.LENGTH_LONG);
+      Get.snackbar("There is an error", e.message!,
+          backgroundColor: Colors.red);
+    }
   }
 }
