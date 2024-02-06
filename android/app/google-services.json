@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "199546589599",
+    "project_id": "saplinvest-1545c",
+    "storage_bucket": "saplinvest-1545c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199546589599:android:663d78496ba6749bebadaa",
+        "android_client_info": {
+          "package_name": "com.example.google_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5j9Sad6ODsLY6uG1L1r9Ao6R4_2XZ8G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199546589599:android:ba99ad6e349d0443ebadaa",
+        "android_client_info": {
+          "package_name": "com.example.saplinvest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5j9Sad6ODsLY6uG1L1r9Ao6R4_2XZ8G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
