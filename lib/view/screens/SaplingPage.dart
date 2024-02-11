@@ -10,22 +10,6 @@ class SaplingPage extends StatefulWidget {
 class _SaplingPageState extends State<SaplingPage> {
   @override
   Widget build(BuildContext context) {
-    var container = Container(
-                      color: Colors.transparent, // Adjust color as needed
-                      child: const Card(
-                      color: Colors.transparent, // Adjust color as needed
-                        child: Center(
-                          child: Text(
-                            'Card 1',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
@@ -69,25 +53,14 @@ class _SaplingPageState extends State<SaplingPage> {
               ),
             ),
             const SizedBox(height: 20),
-            Expanded(
+            const Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child: container,
+                    child: CommentListView(),
                   ),
                   Expanded(
-                    child: Container(
-                      color: Colors.transparent, // Adjust color as needed
-                      child: Center(
-                        child: Text(
-                          'Right Section',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
+                    child: ImageListView(),
                   ),
                 ],
               ),
@@ -99,3 +72,89 @@ class _SaplingPageState extends State<SaplingPage> {
   }
 }
 
+class CommentListView extends StatefulWidget {
+  const CommentListView({Key? key}) : super(key: key);
+
+  @override
+  State<CommentListView> createState() => _CommentListViewState();
+}
+
+class _CommentListViewState extends State<CommentListView> {
+  @override
+  Widget build(BuildContext context) {
+
+    return ListView(
+      children: const <Widget>[
+        CommentCard(),
+        CommentCard(),
+        CommentCard(),
+        CommentCard(),
+        CommentCard(),
+        CommentCard(),
+        CommentCard(),
+        CommentCard(),
+        CommentCard(),
+      ],
+    );
+  }
+}
+
+class ImageListView extends StatefulWidget {
+  const ImageListView({Key? key}) : super(key: key);
+
+  @override
+  State<ImageListView> createState() => _ImageListViewState();
+}
+
+class _ImageListViewState extends State<ImageListView> {
+  @override
+  Widget build(BuildContext context) {
+
+    return ListView(
+      children: const <Widget>[
+        ImageCard(),
+        ImageCard(),
+        ImageCard(),
+        ImageCard(),
+        ImageCard(),
+        ImageCard(),
+        ImageCard(),
+        ImageCard(),
+        ImageCard(),
+      ],
+    );
+  }
+}
+
+class ImageCard extends StatelessWidget {
+  const ImageCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        child: Image.asset("assets/logo.jpg"),
+      );
+  }
+}
+
+
+class CommentCard extends StatelessWidget {
+  const CommentCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        leading: const Icon(Icons.person),
+        subtitle: const Text('Bu ne guzel bir agac bayildim'),
+        onTap: () {
+          // Öğeye tıklandığında yapılacak işlemler
+        },
+      ),
+    );
+  }
+}
