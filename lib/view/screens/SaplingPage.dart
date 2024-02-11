@@ -25,7 +25,10 @@ class _SaplingPageState extends State<SaplingPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.blueAccent, Colors.blueGrey], // Adjust colors as needed
+            colors: [
+              Colors.blueAccent,
+              Colors.blueGrey
+            ], // Adjust colors as needed
           ),
         ),
         child: Column(
@@ -82,7 +85,6 @@ class CommentListView extends StatefulWidget {
 class _CommentListViewState extends State<CommentListView> {
   @override
   Widget build(BuildContext context) {
-
     return ListView(
       children: const <Widget>[
         CommentCard(),
@@ -109,7 +111,6 @@ class ImageListView extends StatefulWidget {
 class _ImageListViewState extends State<ImageListView> {
   @override
   Widget build(BuildContext context) {
-
     return ListView(
       children: const <Widget>[
         ImageCard(),
@@ -134,11 +135,10 @@ class ImageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        child: Image.asset("assets/logo.jpg"),
-      );
+      child: Image.asset("assets/logo.jpg"),
+    );
   }
 }
-
 
 class CommentCard extends StatelessWidget {
   const CommentCard({

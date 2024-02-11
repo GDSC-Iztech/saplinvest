@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:saplinvest/view/HomeScreen.dart';
 
+import '../view/screens/SaplingPage.dart';
+
 class AuthService extends GetxController {
   static final userCollection = FirebaseFirestore.instance.collection("users");
   static final firebaseAuth = FirebaseAuth.instance;
@@ -22,7 +24,7 @@ class AuthService extends GetxController {
             email: email,
             password: password,
             userId: userCredential.user!.uid);
-        Get.to(const HomeScreen());
+        Get.to(const SaplingPage());
       }
     } on FirebaseAuthException catch (e) {
       // Fluttertoast.showToast(msg: e.message!, toastLength: Toast.LENGTH_LONG);
@@ -37,7 +39,7 @@ class AuthService extends GetxController {
       final UserCredential userCredential = await firebaseAuth
           .signInWithEmailAndPassword(email: email, password: password);
       if (userCredential.user != null) {
-        Get.to(const HomeScreen());
+        Get.to(const SaplingPage());
       }
     } on FirebaseAuthException catch (e) {
       // Fluttertoast.showToast(msg: e.message!, toastLength: Toast.LENGTH_LONG);
@@ -74,7 +76,7 @@ class AuthService extends GetxController {
           await firebaseAuth.signInWithCredential(credential);
 
       if (userCredential.user != null) {
-        Get.to(const HomeScreen());
+        Get.to(const SaplingPage());
       }
     } on FirebaseAuthException catch (e) {
       // Fluttertoast.showToast(msg: e.message!, toastLength: Toast.LENGTH_LONG);
