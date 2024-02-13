@@ -7,6 +7,9 @@ import 'package:saplinvest/firebase_options.dart';
 import 'package:saplinvest/view/HomeScreen.dart';
 import 'package:saplinvest/view/auth/LoginScreen.dart';
 import 'package:saplinvest/view/auth/RegisterScreen.dart';
+import 'package:saplinvest/view/screens/AddSaplingPage.dart';
+import 'package:saplinvest/view/screens/DashboardPage.dart';
+import 'package:saplinvest/view/screens/ProfileScreen.dart';
 import 'package:saplinvest/view/screens/SaplingPage.dart';
 
 void main() async {
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
               //     const Duration(seconds: 2), FlutterNativeSplash.remove);
               if (snapshot.hasData) {
                 FlutterNativeSplash.remove();
-                return const SaplingPage();
+                return const DashboardScreen();
               } else {
                 FlutterNativeSplash.remove();
 
