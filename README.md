@@ -14,3 +14,19 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+- 1.Step
+    Open the project folder in Visual Studio Code
+- 2.Step
+    Run the following command in the terminal to install the required dependencies:
+    "flutter pub get"
+- 3.Step
+    Ensure you have an emulator running or a physical device connected. Then, run the app using:
+    "flutter run"
+- 4.Step
+    After running the app, navigate through the registration process, and you will be redirected to the home page.
+    (Work is ongoing for signing in with Google.)
+
+
+
+
